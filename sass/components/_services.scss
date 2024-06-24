@@ -1,0 +1,68 @@
+@import "../variable/variable";
+@import "../mixin/font";
+@import "../mixin/gradient-text";
+
+.service_area {
+  background-color: #232428;
+  padding: 100px 0;
+}
+
+.service_item {
+  background-color: transparent;
+  padding: 40px;
+  transition: $transition;
+  border: 1px solid #414141;
+  margin: -1px;
+
+  .icon {
+    margin-bottom: 20px;
+
+    img {
+      transition: all 0.1s;
+      filter: brightness(0) saturate(100%) invert(48%) sepia(66%) hue-rotate(127deg) saturate(728%) brightness(99%);
+    }
+
+    .tag {
+      color: $black;
+      @include font(15px, 500);
+      background-color: #25272D;
+      padding: 11px 16px;
+      margin-top: 16px;
+      color: $white;
+      transition: $transition;
+    }
+  }
+
+  .text {
+    .title {
+      @include font(28px, 700);
+      color: $white;
+      margin-bottom: 20px;
+      line-height: 39px;
+    }
+
+    p {
+      @include font(16px, 400);
+      color: $white;
+      line-height: 26px;
+      @include line-limit(3)
+    }
+  }
+  &:hover{
+    background-color: $primary;
+    .icon{
+      img{
+        filter: brightness(0) invert(1)
+      }
+      .tag{
+        background-color: $white;
+        color: $black;
+      }
+    }
+    .text{
+      .title{
+        color: $white;
+      }
+    }
+  }
+}

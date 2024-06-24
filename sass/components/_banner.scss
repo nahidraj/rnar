@@ -1,0 +1,46 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+.banner_area {
+  min-height: calc(100vh - 126px);
+  // background-color: $black;
+  position: relative;
+  display: flex;
+
+  .banner_img {
+    box-shadow: -17px 0px 16px 0px rgba(0, 0, 0, 0.32);
+    width: 100%;
+    overflow: hidden;
+    transition: $transition;
+    max-height: calc(100vh - 126px);
+    position: relative;
+    flex: 1;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .name{
+      position: absolute;
+      bottom:61px;
+      left: -61px;
+      transform: rotate(-90deg);
+      width: 169px;
+      h3{
+        @include font(16px, 600);
+        text-transform: uppercase;
+        color: $white;
+        background-color:rgba(0, 0, 0, 0.8);
+        padding: 14px 17px;
+      }
+    }
+    &:hover{
+      flex-grow: 7;
+    }
+  }
+}

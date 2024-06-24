@@ -1,0 +1,64 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+.about_us_area {
+  padding-top: 100px;
+  padding-bottom: 108px;
+  position: relative;
+
+  &::before {
+    background-color: #F8F8F8;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 669px;
+    z-index: -1;
+  }
+
+  .image {
+    padding-right: 50px;
+  }
+
+  .about_text {
+    margin-top: 60px;
+
+    .section_title {
+      margin-bottom: 30px;
+    }
+
+    .list_info {
+      margin-top: 30px;
+
+      ul {
+        li {
+          @include font(20px, 600);
+          padding-left: 43px;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background: url(../images/check.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+          }
+        }
+
+        li+li {
+          margin-top: 27px;
+        }
+      }
+    }
+
+    .common_btn {
+      margin-top: 52px;
+    }
+  }
+}

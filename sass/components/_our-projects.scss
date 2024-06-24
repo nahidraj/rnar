@@ -1,0 +1,109 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+.latest_project_area {
+  padding-top: 100px;
+
+  .projects_menus {
+    padding-bottom: 60px;
+
+    ul {
+      text-align: center;
+
+      li {
+        button {
+          display: inline-block;
+          background-color: $white;
+          padding: 20px 24px;
+          border-radius: 0;
+          text-transform: uppercase;
+          margin: 0 10px;
+          @include font(16px, 600);
+          color: $black;
+          border: 1px solid $primary;
+          transition: $transition;
+
+          &:hover {
+            background-color: $primary;
+            color: $white;
+          }
+        }
+
+        button.active {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .project_item {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      transition: $transition;
+      height: 531px !important;
+    }
+
+    &:hover {
+      img {
+        width: 90% !important;
+        transform: scale(1.1);
+        -webkit-filter: brightness(0.8) contrast(1.1) saturate(1.2);
+        filter: brightness(0.8) contrast(1.1) saturate(1.2);
+      }
+    }
+
+    .text {
+      position: absolute;
+      bottom: 0;
+      right: 1px;
+      background-color: #000000;
+      padding: 24px 30px;
+      transform-origin: right;
+      transform: translateY(-50%) perspective(250px) rotateY(-90deg);
+      transition: all linear 0.25s;
+      visibility: hidden;
+      opacity: 0;
+
+      .title {
+        @include font(20px, 700);
+        color: $white;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+      }
+
+      p {
+        @include font(16px, 500);
+        color: $primary;
+        line-height: 26px;
+        text-transform: uppercase;
+      }
+
+      .right {
+        span {
+          color: $primary;
+          width: 45px;
+          height: 45px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $white;
+
+          svg {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .text {
+        transform: translateY(-50%) perspective(250px) rotateY(0deg);
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

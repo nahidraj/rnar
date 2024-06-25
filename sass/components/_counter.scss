@@ -41,6 +41,10 @@
         line-height: 62px;
         margin-bottom: 4px;
         color: $white;
+        .odometer{
+          position: relative;
+          top: -3px;
+        }
       }
 
       p {

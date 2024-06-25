@@ -45,7 +45,8 @@
     ul {
       li {
         display: inline-block;
-        margin-right: 20px;
+        margin-right: 0;
+        margin-left: 20px;
 
         a {
           color: $white;
@@ -113,20 +114,16 @@
   transition: all linear 0.2s;
 }
 
-.mobile-menu-area .container {
-  padding: 14px 45px;
-}
-
 .mobile-menu-area .mobile-topbar .bars i {
   width: 40px;
   height: 40px;
   background-color: transparent;
   border: 1px solid $primary;
   color: $primary;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   line-height: 37px;
-  border-radius: 50px;
+  border-radius: 5px;
   cursor: pointer;
   transition: $transition;
 }
@@ -210,6 +207,7 @@
 
 .mobile-menu-area .mobile-menu-main .menu-body .menu-list ul li a {
   font-weight: 500;
+  font-size: 15px;
   color: $black;
   border-top: 1px solid $border;
   width: 100%;

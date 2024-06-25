@@ -43,12 +43,9 @@ $(function () {
     arrows: false,
     dots: true,
     responsive: [{
-      breakpoint: 1024,
+      breakpoint: 992,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToShow: 1,
       }
     }]
   });
@@ -63,12 +60,9 @@ $(function () {
     arrows: false,
     dots: false,
     responsive: [{
-      breakpoint: 1024,
+      breakpoint: 992,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToShow: 1,
       }
     }]
   });

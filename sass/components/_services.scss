@@ -5,6 +5,9 @@
 .service_area {
   background-color: #232428;
   padding: 100px 0;
+  a{
+    height: 100%;
+  }
 }
 
 .service_item {
@@ -13,6 +16,7 @@
   transition: $transition;
   border: 1px solid #414141;
   margin: -1px;
+  height: 100%;
 
   .icon {
     margin-bottom: 20px;

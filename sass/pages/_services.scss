@@ -1,0 +1,35 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+.services_area_page {
+  background-color: $white;
+  padding-bottom: 0;
+  margin-bottom: 100px;
+
+  .service_item {
+    margin: 0;
+    .title {
+      color: $black;
+    }
+
+    p {
+      color: $paragraph;
+    }
+
+    .icon .tag {
+      color: $black;
+      background-color: rgba(37, 39, 45, 0.1);
+    }
+
+    &:hover {
+      border-color: $primary;
+      .icon .tag {
+        background-color: $white;
+        color: $black;
+      }
+      p{
+        color: $white;
+      }
+    }
+  }
+}

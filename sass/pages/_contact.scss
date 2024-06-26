@@ -1,0 +1,112 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+.contact_area_page{
+  margin: 100px 0;
+  margin-bottom: 0;
+  .section_title{
+    margin-bottom:30px;
+  }
+}
+
+.contact_area_page .section-title-one {
+	margin-bottom: 20px;
+}
+
+.contact_area_page .short-description {
+	margin-bottom: 30px;
+}
+
+.contact_area_page .contact-form .input-group {
+	margin-bottom: 20px;
+}
+
+.contact_area_page .contact-form .input-group input {
+	width: 100%;
+	border-radius: 5px;
+	height: 60px;
+	border: 1px solid $border;
+	padding: 0 30px;
+	transition: $transition;
+}
+
+.contact_area_page .contact-form .input-group input:focus {
+	border-color: $black;
+}
+
+.contact_area_page .contact-form .input-group textarea {
+	width: 100%;
+	border-radius: 5px;
+	height: 175px;
+	border: 1px solid $border;
+	padding: 30px;
+	resize: none;
+	transition: $transition;
+}
+
+.contact_area_page .contact-form .input-group textarea:focus {
+	border-color: $black;
+}
+
+.contact_area_page .contact-form .submit-btn {
+	margin-top: 0px;
+	background-color: $primary;
+	border-radius: 5px;
+	transition: $transition;
+	color: $white;
+	font-weight: 700;
+	border: 0;
+	padding: 20px 44px;
+}
+
+.contact_area_page .contact-form .submit-btn:hover {
+	background-color: $black;
+}
+
+.contact_area_page .contact-information {
+	padding-left: 60px;
+}
+
+.contact_area_page .contact-information .contact-info-item+.contact-info-item {
+	margin-top: 60px;
+}
+
+.contact_area_page .contact-information .contact-info-item ul {
+	display: flex;
+}
+
+.contact_area_page .contact-information .contact-info-item ul .icon {
+	margin-right: 20px;
+}
+
+.contact_area_page .contact-information .contact-info-item ul .icon i {
+	font-size: 25px;
+	color: $primary;
+	margin-top: 3px;
+}
+
+.contact_area_page .contact-information .contact-info-item ul .title {
+	font-size: 24px;
+  font-weight: 600;
+}
+
+.contact_area_page .contact-information .contact-info-item p {
+	margin-top: 5px;
+}
+
+/*=============================
+	23. Contact map area start
+===============================*/
+
+.contact-map-area {
+	padding-top: 60px;
+}
+
+.contact-map-area .contact-map {
+	height: 496px;
+}
+
+.contact-map-area .contact-map iframe {
+	height: 100%;
+	width: 100%;
+}

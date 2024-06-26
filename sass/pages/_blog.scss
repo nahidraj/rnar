@@ -1,0 +1,38 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+.blog_area_page {
+  margin-top: 0;
+
+  .blog_slider_item {
+    margin: 0;
+  }
+}
+
+.custom_pagination {
+  margin-top: 50px;
+  justify-content: center;
+
+  li {
+    margin: 0 5px;
+
+    a {
+      box-shadow: none !important;
+      width: 45px;
+      height: 45px;
+      border: 1px solid $border;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include font(16px, 600);
+      color: $black;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+        border-color: $primary;
+      }
+    }
+  }
+}

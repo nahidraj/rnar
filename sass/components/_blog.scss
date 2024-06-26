@@ -17,11 +17,22 @@
       width: 265px;
       height: 325px;
       flex: 0 0 auto;
+      overflow: hidden;
 
       img {
         height: 100%;
         object-fit: cover;
         object-position: center;
+        transition: $transition;
+      }
+    }
+
+    &:hover {
+      .image {
+        img {
+          transform: scale(1.1);
+        }
+
       }
     }
 
@@ -90,10 +101,11 @@
       transform: translateY(-50%);
     }
   }
-  .stroke_text{
-   color: transparent;
-   position: absolute;
-   bottom: 25px;
-   left: 70px;
+
+  .stroke_text {
+    color: transparent;
+    position: absolute;
+    bottom: 25px;
+    left: 70px;
   }
 }

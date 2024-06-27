@@ -150,7 +150,8 @@
         a {
           @include font(16px, 500);
           color: $black;
-          &:hover{
+
+          &:hover {
             color: $primary;
           }
         }
@@ -160,22 +161,50 @@
 }
 
 
+.whatsapp_icon {
+  width: 40px;
+  height: 40px;
+  background: #25D366;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  font-size: 26px;
+  border-radius: 5px;
+  margin: 5px 0px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+}
+
+.whatsapp_icon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 1;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
+}
+
 /* scroll to top area */
 .scroll-to-top {
   display: inline-block;
   background: $primary;
   width: 40px;
-  height: 60px;
+  height: 40px;
   line-height: 45px;
   color: $white;
   text-align: center;
-  border-radius: 50px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-radius: 5px;
   border: 0;
   position: fixed;
-  bottom: -60px;
-  right: 30px;
+  bottom: 75px;
+  right: 15px;
   transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
   opacity: 0;
   visibility: hidden;
@@ -193,20 +222,9 @@
   }
 }
 
-.scroll-to-top::after {
-  position: absolute;
-  z-index: -1;
-  content: '';
-  top: 100%;
-  left: 5%;
-  height: 10px;
-  width: 90%;
-  opacity: 1;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
-}
 
 .scroll-to-top.show {
   opacity: 1;
   visibility: visible;
-  bottom: 0px;
+  bottom: 75px;
 }

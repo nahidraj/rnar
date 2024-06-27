@@ -98,12 +98,23 @@
         &:first-child {
           width: 100%;
         }
+
         &:nth-child(2) {
           width: 49%;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+          }
         }
 
         &:nth-child(3) {
           width: 49%;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+          }
         }
       }
     }

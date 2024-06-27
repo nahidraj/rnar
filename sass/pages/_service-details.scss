@@ -1,0 +1,62 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+.service_details_area {
+  margin: 100px 0;
+
+  .service_text {
+    margin-top: 40px;
+
+    .title {
+      @include font(28px, 700);
+      margin-bottom: 24px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+  .related_service {
+    padding-left: 40px;
+
+    ul {
+      li {
+        a {
+          border: 1px solid $border;
+          @include font(15px, 500);
+          color: $black;
+          width: 100%;
+          padding: 17px 24px;
+          display: flex;
+          line-height: 24px;
+          align-items: center;
+
+          &:hover {
+            background-color: $primary;
+            color: $white;
+            border-color: $primary;
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+          }
+        }
+      }
+
+      .active {
+        a {
+          background-color: $primary;
+          color: $white;
+          border-color: $primary;
+        }
+      }
+
+      li+li {
+        margin-top: 24px;
+      }
+    }
+  }
+}

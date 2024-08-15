@@ -745,6 +745,24 @@ p {
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
+.banner_area .banner_img .overlay {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.banner_area .banner_img .text {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 24px;
+  width: 90%;
+  margin: 0 auto;
+  visibility: hidden;
+  opacity: 0;
+}
+.banner_area .banner_img .text .common_btn {
+  margin-top: 30px;
+}
 .banner_area .banner_img img {
   width: 100%;
   object-fit: cover;
@@ -767,6 +785,12 @@ p {
 }
 .banner_area .banner_img:hover {
   flex-grow: 7;
+}
+.banner_area .banner_img:hover .text {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s ease-out 0s;
+  transition-delay: 0.3s;
 }
 
 .about_us_area {

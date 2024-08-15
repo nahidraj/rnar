@@ -1,0 +1,136 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+.team_area {
+  padding-top: 100px;
+
+  .team_item {
+    margin: 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 29px;
+    border: 1px solid $border;
+    padding-right: 20px;
+
+    .image {
+      position: relative;
+      flex: 0 0 auto;
+      width: 195px;
+      height: 195px;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .social_icon {
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: $transition;
+
+        a {
+          background-color: $black;
+          width: 40px;
+          height: 40px;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          color: $white;
+          margin: 0 -1px;
+
+          &:hover {
+            background-color: $primary;
+          }
+
+          svg {
+            width: 18px;
+            height: 18px
+          }
+        }
+      }
+    }
+
+    .text {
+      .name {
+        @include font(28px, 700);
+        color: $black;
+        margin-bottom: 8px
+      }
+
+      .designation {
+        @include font(16px, 600);
+        color: $paragraph;
+      }
+
+      .top {
+        border-bottom: 1px solid $border;
+        display: inline-block;
+        margin-bottom: 10px;
+        padding-bottom: 16px;
+      }
+
+      p {
+        @include line_limit(3);
+        line-height: 26px;
+      }
+    }
+
+    &:hover {
+      .social_icon {
+        visibility: visible;
+        opacity: 1;
+        bottom: 0;
+      }
+    }
+  }
+
+  .slick-dots {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slick-dots li {
+    display: inline-block;
+    margin: 0 8px;
+  }
+
+  .slick-dots li button {
+    font-size: 0;
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    border: 0;
+    border-radius: 50%;
+    background-color: $primary;
+    position: relative;
+  }
+
+  .slick-dots li button::before {
+    width: 24px;
+    height: 24px;
+    border: 2px solid $primary;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: $transition;
+  }
+
+  .slick-dots .slick-active button::before {
+    opacity: 1;
+  }
+}

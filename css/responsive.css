@@ -115,6 +115,19 @@
   .videos_area .main .video_item.moved-up {
     margin-top: -149px;
   }
+
+  .team_area .team_item .text .name {
+    font-size: 22px;
+  }
+
+  .team_area .team_item .text p {
+    line-height: 23px;
+    font-size: 15px;
+  }
+
+  .team_area .team_item {
+    gap: 18px;
+  }
 }
 
 @media (max-width:1199.98px) {
@@ -311,6 +324,19 @@
   .blog-details .blog-details-main .text .blog-inner-title {
     font-size: 24px;
     line-height: 36px;
+  }
+
+  .team_area .team_item .text .name {
+    font-size: 19px;
+  }
+
+  .team_area .team_item .text .designation {
+    font-size: 15px;
+  }
+
+  .team_area .team_item .text .top {
+    margin-bottom: 7px;
+    padding-bottom: 13px;
   }
 }
 
@@ -563,7 +589,7 @@
   }
 
   .section_title {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .service_item {
@@ -852,5 +878,11 @@
 
   .blog-right-sidebar {
     margin-top: 20px;
+  }
+
+  .team_area .team_item {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
   }
 }

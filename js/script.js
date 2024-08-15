@@ -34,7 +34,7 @@ $(function () {
   });
 
   // testimonial slider js
-  $(".testimonial_slider").slick({
+  $(".team_slider").slick({
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,

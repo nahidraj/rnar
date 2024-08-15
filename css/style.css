@@ -1107,74 +1107,98 @@ p {
   width: 35px;
 }
 
-.testimonial_area {
+.team_area {
   padding-top: 100px;
 }
-.testimonial_area .testimonial_item {
+.team_area .team_item {
   margin: 0 12px;
   display: flex;
   align-items: center;
   gap: 29px;
+  border: 1px solid #E3E3E3;
+  padding-right: 20px;
 }
-.testimonial_area .testimonial_item .image {
+.team_area .team_item .image {
   position: relative;
   flex: 0 0 auto;
   width: 195px;
   height: 195px;
+  overflow: hidden;
 }
-.testimonial_area .testimonial_item .image .quote {
-  width: 46px;
-  height: 46px;
-  background-color: #0BBDAF;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.team_area .team_item .image img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.team_area .team_item .image .social_icon {
   position: absolute;
-  top: -30px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-out 0s;
 }
-.testimonial_area .testimonial_item .text .name {
+.team_area .team_item .image .social_icon a {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  margin: 0 -1px;
+}
+.team_area .team_item .image .social_icon a:hover {
+  background-color: #0BBDAF;
+}
+.team_area .team_item .image .social_icon a svg {
+  width: 18px;
+  height: 18px;
+}
+.team_area .team_item .text .name {
   font-size: 28px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.8);
   margin-bottom: 8px;
 }
-.testimonial_area .testimonial_item .text .designation {
+.team_area .team_item .text .designation {
   font-size: 16px;
   font-weight: 600;
   color: #4d515f;
 }
-.testimonial_area .testimonial_item .text .top {
+.team_area .team_item .text .top {
   border-bottom: 1px solid #E3E3E3;
   display: inline-block;
   margin-bottom: 10px;
   padding-bottom: 16px;
 }
-.testimonial_area .testimonial_item .text p {
+.team_area .team_item .text p {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   line-height: 26px;
 }
-.testimonial_area .slick-track {
-  padding: 30px 0;
+.team_area .team_item:hover .social_icon {
+  visibility: visible;
+  opacity: 1;
+  bottom: 0;
 }
-.testimonial_area .slick-dots {
+.team_area .slick-dots {
   list-style: none;
   margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.testimonial_area .slick-dots li {
+.team_area .slick-dots li {
   display: inline-block;
   margin: 0 8px;
 }
-.testimonial_area .slick-dots li button {
+.team_area .slick-dots li button {
   font-size: 0;
   list-style: none;
   width: 10px;
@@ -1184,7 +1208,7 @@ p {
   background-color: #0BBDAF;
   position: relative;
 }
-.testimonial_area .slick-dots li button::before {
+.team_area .slick-dots li button::before {
   width: 24px;
   height: 24px;
   border: 2px solid #0BBDAF;
@@ -1197,7 +1221,7 @@ p {
   opacity: 0;
   transition: all 0.4s ease-out 0s;
 }
-.testimonial_area .slick-dots .slick-active button::before {
+.team_area .slick-dots .slick-active button::before {
   opacity: 1;
 }
 

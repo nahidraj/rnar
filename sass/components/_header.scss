@@ -66,21 +66,94 @@
 
   .navbar-nav {
     .nav-item {
+      position: relative;
+
       .nav-link {
         @include font(16px, 600);
         color: $black;
         line-height: normal;
         position: relative;
-        margin-right: 30px;
+        margin-left: 30px;
         line-height: 49px;
 
-        &:hover {
-          color: $primary;
+        svg {
+          width: 18px;
+          height: 18px;
+          position: relative;
+          top: -1px;
         }
       }
 
       .active {
         color: $primary;
+      }
+
+      .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 230px;
+        background-color: $white;
+        box-shadow: 0px 10px 30px 0px rgba(137, 139, 142, 0.2);
+        transition: $transition;
+        visibility: hidden;
+        opacity: 0;
+        margin-top: 20px;
+
+        li {
+          position: relative;
+          a {
+            font-weight: 500;
+            line-height: 20px;
+            width: 100%;
+            background-color: $white;
+            color: $black;
+            padding: 11px 24px;
+            padding-right: 16px;
+            font-size: 15px;
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+
+            svg {
+              width: 18px;
+              height: 18px;
+              position: relative;
+              top: -1px;
+              margin-left: auto;
+            }
+
+            &:hover {
+              background-color: $primary;
+              color: $white;
+            }
+          }
+
+          .sub-menu {
+            left: 100%;
+            top: 0;
+          }
+          &:hover> {
+    
+            .sub-menu {
+              margin-top: 0;
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      &:hover> {
+        .nav-link {
+          color: $primary;
+        }
+
+        .sub-menu {
+          margin-top: 0;
+          visibility: visible;
+          opacity: 1;
+        }
       }
     }
 
@@ -218,6 +291,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  svg{
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .mobile-menu-area .mobile-menu-main .menu-body .menu-list ul li:last-child a {

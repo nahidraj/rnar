@@ -118,5 +118,13 @@
         }
       }
     }
+    .project_videos{
+      width: 100%;
+      height: 600px;
+      iframe{
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }

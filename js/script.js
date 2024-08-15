@@ -75,102 +75,6 @@ $(function () {
     $('.blog_slider').slick('slickNext');
   });
 
-  // // for sidebar menu timeline animation
-  // const header_control_bar = document.querySelector(".header_control_bar");
-  // const close_offcanvas = document.querySelector(".close_offcanvas");
-  // const menu_overlay = document.querySelector(".menu_overlay");
-
-  // let tl = gsap.timeline();
-  // tl.to(".menu_overlay", {
-  //   opacity:1,
-  //   left:0,
-  //   duration: 0.1,
-  // });
-  // tl.to(".menu_main_area", {
-  //   left:0,
-  //   opacity:1,
-  //   duration: 0.3,
-  // });
-  // // tl.from(".info_item", {
-  // //   opacity: 0,
-
-  // // });
-
-  // tl.pause();
-
-  // header_control_bar.addEventListener("click", function () {
-  //   tl.play();
-  // });
-
-  // close_offcanvas.addEventListener("click", function () {
-  //   tl.reverse();
-  // });
-  // menu_overlay.addEventListener("click", function () {
-  //   tl.reverse();
-  // });
-
-  // // section zoom js
-  // TweenLite.defaultEase = Linear.easeNone;
-  // var ctrl = new ScrollMagic.Controller();
-
-  // // Create scenes
-  // $(".content").each(function (i) {
-  //   // let target1 = $(this).find(".section_title");
-  //   let target2 = $(this).find(".service_left");
-  //   let target3 = $(this).find(".service_right");
-  //   let target4 = $(this).find(".expertise_item");
-  //   var tl = new TimelineMax();
-  //   // tl.from(target1, 1, {
-  //   //   opacity: 0,
-  //   //   y: -100
-  //   // });
-  //   // tl.from(target2, 1, {
-  //   //   scale: 0.5
-  //   // }, 0);
-  //   tl.from(
-  //     target2,
-  //     1,
-  //     {
-  //       opacity: 0,
-  //       x: -100,
-  //     },
-  //     0
-  //   );
-  //   tl.from(
-  //     target3,
-  //     1,
-  //     {
-  //       opacity: 0,
-  //       x: 100,
-  //     },
-  //     0
-  //   );
-  //   tl.from(
-  //     target4,
-  //     1,
-  //     {
-  //       opacity: 0,
-  //       x: -100,
-  //       stagger: 1,
-  //     },
-  //     0
-  //   );
-
-  //   new ScrollMagic.Scene({
-  //     triggerElement: this,
-  //     duration: "50%",
-  //     triggerHook: 0.5,
-  //   })
-  //     .setTween(tl)
-  //     .addTo(ctrl);
-  //   // .addIndicators({
-  //   //   colorTrigger: "white",
-  //   //   colorStart: "white",
-  //   //   colorEnd: "white",
-  //   //   indent: 40
-  //   // });
-  // });
-
   // gsap splitting text
   gsap.registerPlugin(ScrollTrigger);
   const splitTypes = document.querySelectorAll(".reveal-type");
@@ -233,29 +137,6 @@ $(function () {
     });
   });
 
-  // // image skew
-  // let proxy = {
-  //     skew: 0
-  //   },
-  //   skewSetter = gsap.quickSetter(".skewElem", "skewY", "deg"), // fast
-  //   clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
-
-  // ScrollTrigger.create({
-  //   onUpdate: (self) => {
-  //     let skew = clamp(self.getVelocity() / -300);
-  //     // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
-  //     if (Math.abs(skew) > Math.abs(proxy.skew)) {
-  //       proxy.skew = skew;
-  //       gsap.to(proxy, {
-  //         skew: 0,
-  //         duration: 0.8,
-  //         ease: "power3",
-  //         overwrite: true,
-  //         onUpdate: () => skewSetter(proxy.skew)
-  //       });
-  //     }
-  //   }
-  // });
 
   // image reveal
   gsap.registerPlugin(ScrollTrigger);
@@ -286,31 +167,6 @@ $(function () {
     });
   });
 
-
-  // // project details image animation
-  // gsap.utils.toArray(".content_image").forEach(function (container) {
-  //   let image = container.querySelector("img");
-
-  //   let tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: container,
-  //       scrub: true,
-  //       pin: false,
-  //     },
-  //   });
-  //   tl.from(image, {
-  //     yPercent: -60,
-  //     ease: Power2.out,
-  //   }).to(image, {
-  //     yPercent: 60,
-  //     ease: Power2.out,
-  //   });
-  // });
-  // // make the right edge "stick" to the scroll bar. force3D: true improves performance
-  // gsap.set(".skewElem", {
-  //   transformOrigin: "right center",
-  //   force3D: true,
-  // });
 
   // back to top js
   var btn = $(".scroll-to-top");

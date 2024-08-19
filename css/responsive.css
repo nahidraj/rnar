@@ -343,6 +343,10 @@
     margin-bottom: 7px;
     padding-bottom: 13px;
   }
+
+  .calculate_area .package_info .form-check {
+    max-width: 284px;
+  }
 }
 
 @media (max-width:991.98px) {
@@ -589,6 +593,22 @@
 
   p {
     font-size: 14px;
+  }
+
+  .calculate_banner_area .text .title {
+    max-width: 620px;
+    font-size: 26px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 40px;
+  }
+
+  .calculate_banner_area .text .common_btn {
+    font-size: 16px;
+  }
+
+  .poupp_modal .text .title {
+    font-size: 30px;
   }
 }
 
@@ -899,5 +919,38 @@
   .project_details_area_page .project_details .project_videos {
     width: 100%;
     height: 300px;
+  }
+
+  .calculate_banner_area {
+    padding: 60px 0;
+  }
+
+  .calculate_banner_area .text .title {
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  .poupp_modal .text .title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .poupp_modal .text .common_btn {
+    font-size: 14px;
+    padding: 13px 20px;
+  }
+
+  .calculate_area .package_info .form-check {
+    max-width: 100%;
+  }
+
+  .calculate_result .main .title {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+
+  .calculate_result .main .price {
+    font-size: 32px;
   }
 }

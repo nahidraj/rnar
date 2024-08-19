@@ -1,0 +1,252 @@
+.calculate_banner_area {
+  background-color: $white;
+  padding: 80px 0;
+  border-bottom: 1px solid $border;
+
+  .text {
+    .title {
+      max-width: 620px;
+      @include font(32px, 700);
+      color: $black;
+      line-height: 44px;
+    }
+
+    .common_btn {
+      font-size: 20px;
+      animation: skew-y-shakeing 2s infinite linear;
+    }
+
+    @keyframes skew-y-shakeing {
+      0% {
+        transform: skewX(-15deg);
+      }
+
+      5% {
+        transform: skewX(15deg);
+      }
+
+      10% {
+        transform: skewX(-15deg);
+      }
+
+      15% {
+        transform: skewX(15deg);
+      }
+
+      20% {
+        transform: skewX(0deg);
+      }
+
+      100% {
+        transform: skewX(0deg);
+      }
+    }
+  }
+}
+
+.calculate_area {
+  padding: 80px 0;
+  padding-bottom: 24px;
+  background-color: #f5f5f5;
+
+  .package_info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    .form-check {
+      width: auto;
+      padding-left: 0;
+      width: 100%;
+      max-width: 300px;
+      background-color: #F2F8EE;
+      border-radius: 20px;
+      position: relative;
+
+      .icon {
+        margin-bottom: 20px
+      }
+
+      .text {
+        .package_title {
+          @include font(24px, 500);
+        }
+
+        .price {
+          @include font(28px, 700);
+          margin-top: 12px;
+        }
+      }
+
+      .check {
+        color: green;
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9;
+        background-color: #fff;
+        border-radius: 50%;
+        visibility: hidden;
+
+        .icon {
+          margin-bottom: 0;
+        }
+
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+
+    .form-check-input {
+      display: none;
+
+      +.form-check-label {
+        background-color: transparent;
+        color: $black;
+        padding: 3px 10px;
+        width: 100%;
+        border: 2px solid transparent;
+        @include font(13px, 700);
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        border-radius: 20px;
+        display: inline-block;
+        backface-visibility: hidden;
+        transition: $transition;
+        padding: 30px;
+      }
+
+      &:checked {
+        +.form-check-label {
+          border-color: $black;
+          backface-visibility: hidden;
+          border-color: $black;
+
+          .check {
+            visibility: visible;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .main {
+    max-width: 984px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: $white;
+    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 40px 20px;
+
+    .square_feet {
+      margin-bottom: 24px;
+
+      input {
+        border-radius: 15px;
+        border: 1px solid $black;
+        width: 100%;
+        height: 60px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 0 20px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      span {
+        border: 1px solid $black;
+        border-right: 0;
+        @include font(16px, 600);
+        background-color: #f5f5f5;
+        padding: 18px 14px;
+        border-radius: 15px;
+        flex: 0 0 auto;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      @include font(14px, 600);
+      margin-bottom: 8px;
+    }
+
+    .input-group input {
+      width: 100%;
+      border-radius: 5px;
+      height: 60px;
+      border: 1px solid $border;
+      padding: 0 30px;
+      transition: $transition;
+      border-radius: 10px !important;
+    }
+
+    .input-group input:focus {
+      border-color: $black;
+    }
+
+    .input-group textarea {
+      width: 100%;
+      border-radius: 5px;
+      height: 175px;
+      border: 1px solid $border;
+      padding: 30px;
+      resize: none;
+      transition: $transition;
+    }
+
+    .input-group textarea:focus {
+      border-color: $black;
+    }
+
+    .submit-btn {
+      margin-top: 0px;
+      background-color: $primary;
+      border-radius: 5px;
+      transition: $transition;
+      color: $white;
+      font-weight: 700;
+      border: 0;
+      padding: 20px 44px;
+    }
+
+    .submit-btn:hover {
+      background-color: $black;
+    }
+
+  }
+}
+
+.calculate_result {
+  padding-top: 0;
+  padding-bottom: 80px;
+
+  .main {
+    text-align: center;
+
+    .title {
+      @include font(24px, 600);
+      color: green;
+      line-height: 36px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      @include font(38px, 600);
+      margin-top: 12px;
+    }
+  }
+}

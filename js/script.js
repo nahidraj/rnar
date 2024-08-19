@@ -13,6 +13,15 @@ $(function () {
     }
   });
 
+  $(document).ready(function () {
+    // Check if the modal has already been shown
+    if (!sessionStorage.getItem('modalShown')) {
+      // Show the modal
+      $('#exampleModal').modal('show');
+      // Set session storage to prevent showing again
+      sessionStorage.setItem('modalShown', 'true');
+    }
+  });
   // gallery js
   const items = document.querySelectorAll('.main .video_item');
 
@@ -190,7 +199,7 @@ $(function () {
         0
       );
     }
-  });
+  })
 
   // mobilel menu js
 

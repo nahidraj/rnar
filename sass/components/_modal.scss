@@ -1,0 +1,44 @@
+.poupp_modal {
+  background-color:rgba(0, 0, 0, 0.7);
+  .btn-close {
+    --bs-btn-close-bg: none;
+    top: 10px;
+    right: 16px;
+    opacity: 1 !important;
+    z-index: 9;
+
+    svg {
+      stroke: $white;
+    }
+  }
+
+  .modal-dialog {
+    max-width: 700px;
+
+    .modal-content {
+      border-radius: 15px;
+    }
+  }
+
+  .image {
+    overflow: hidden;
+    border-radius: 15px;
+
+    img {
+      max-height: 400px;
+      object-fit: cover;
+      height: 100%;
+      object-position: bottom;
+      border-radius: 15px;
+    }
+  }
+
+  .text {
+    background: rgba(0, 0, 0, 0.3);
+
+    .title {
+      @include font(36px, 700);
+      color: $white;
+    }
+  }
+}

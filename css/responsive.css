@@ -347,6 +347,10 @@
   .calculate_area .package_info .form-check {
     max-width: 284px;
   }
+
+  .videos_area .main .video_item .overlay .video-title .title {
+    font-size: 15px;
+  }
 }
 
 @media (max-width:991.98px) {
@@ -609,6 +613,10 @@
 
   .poupp_modal .text .title {
     font-size: 30px;
+  }
+
+  .videos_area .main .video_item .overlay .video-title .title {
+    font-size: 16px;
   }
 }
 

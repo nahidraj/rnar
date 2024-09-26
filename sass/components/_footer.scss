@@ -110,12 +110,12 @@
         list-style-type: none;
         display: flex;
         gap: 20px;
+        align-items: center;
 
         span {
           flex: 0 0 auto;
           color: $primary;
           position: relative;
-          top: 4px;
         }
 
         a {

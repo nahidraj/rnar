@@ -40,6 +40,21 @@
           font-size: 30px;
 
         }
+        .video-title{
+          position: absolute;
+          background-color: $black;
+          bottom: 8px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 96%;
+          text-align: center;
+          padding: 18px 20px;
+          .title{
+            color: $white;
+            @include font(18px, 700);
+            line-height: normal;
+          }
+        }
       }
 
       img {

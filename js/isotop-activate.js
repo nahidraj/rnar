@@ -1,22 +1,22 @@
-$(document).ready(function () {
-  // init Isotope
-  let $grid = $(".projects_container").isotope({
-    // options
-  });
-  // filter items on button click
-  $(".projects_menus").on("click", "button", function () {
-    let filterValue = $(this).attr("data-filter");
-    $grid.isotope({
-      filter: filterValue,
-    });
-  });
+// $(document).ready(function () {
+//   // init Isotope
+//   let $grid = $(".projects_container").isotope({
+//     // options
+//   });
+//   // filter items on button click
+//   $(".projects_menus").on("click", "button", function () {
+//     let filterValue = $(this).attr("data-filter");
+//     $grid.isotope({
+//       filter: filterValue,
+//     });
+//   });
 
-  $(".projects_menus button").on("click", function (event) {
-    $(this).siblings(".active").removeClass("active");
-    $(this).addClass("active");
-    event.preventDefault();
-  });
-});
+//   $(".projects_menus button").on("click", function (event) {
+//     $(this).siblings(".active").removeClass("active");
+//     $(this).addClass("active");
+//     event.preventDefault();
+//   });
+// });
 
 // $(document).ready(function () {
 //   // init Isotope

@@ -76,33 +76,40 @@
 
   // Split text animation
   document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Isotope only once
+    const $projectsContainer = $(".projects_container").isotope({
+      itemSelector: ".col-lg-6",
+      layoutMode: "fitRows"
+    });
+  
+    // Filter items on button click
+    $(".projects_menus").on("click", "button", function (event) {
+      event.preventDefault();
+      const filterValue = $(this).attr("data-filter");
+  
+      // Filter items using Isotope
+      $projectsContainer.isotope({ filter: filterValue });
+  
+      // Update active class on buttons
+      $(this).siblings(".active").removeClass("active");
+      $(this).addClass("active");
+  
+      // Re-initialize SplitText animations after filtering
+      $projectsContainer.one("arrangeComplete", function () {
+        initSplitTextAnimations();
+      });
+    });
+  
+    // Initialize SplitText animations for the first time
     if ($(".split-text").length > 0) {
-      // Initialize SplitText animations
       initSplitTextAnimations();
-  
-      // Initialize Isotope
-      const $projectsContainer = $('.projects_container').isotope({
-        itemSelector: '.col-lg-6',
-        layoutMode: 'fitRows'
-      });
-  
-      // Filter projects when a button is clicked
-      $('.projects_menus button').on('click', function () {
-        const filterValue = $(this).attr('data-filter');
-        $projectsContainer.isotope({ filter: filterValue });
-  
-        // Re-initialize the SplitText animations after Isotope filter, excluding the title
-        $projectsContainer.one('arrangeComplete', function () {
-          initSplitTextAnimations();
-        });
-      });
     }
   
     // Function to initialize SplitText animations
     function initSplitTextAnimations() {
       $(".split-text").each(function (index, el) {
-        // If the element is the project section title and has already run, skip re-initialization
-        if ($(el).hasClass('project-section-title') && el.hasRun) {
+        // Skip re-initialization for project-section-title if it has already run
+        if ($(el).hasClass("project-section-title") && el.hasRun) {
           return; // Skip this element
         }
   
@@ -125,13 +132,13 @@
           ease: "circ.out"
         };
   
-        if ($(el).hasClass('right')) {
+        if ($(el).hasClass("right")) {
           animationProps.x = "50";
-        } else if ($(el).hasClass('left')) {
+        } else if ($(el).hasClass("left")) {
           animationProps.x = "-50";
-        } else if ($(el).hasClass('up')) {
+        } else if ($(el).hasClass("up")) {
           animationProps.y = "80";
-        } else if ($(el).hasClass('down')) {
+        } else if ($(el).hasClass("down")) {
           animationProps.y = "-80";
         }
   
@@ -145,7 +152,7 @@
             toggleActions: "play none none reverse",
             onEnter: () => {
               // Mark the project section title as having run
-              if ($(el).hasClass('project-section-title')) {
+              if ($(el).hasClass("project-section-title")) {
                 el.hasRun = true; // Set a custom property to indicate it has run
               }
             }
@@ -156,11 +163,12 @@
           scale: 1,
           opacity: 1,
           duration: 0.4,
-          stagger: 0.02,
+          stagger: 0.02
         });
       });
     }
   });
+  
   
   // Image reveal js
   document.addEventListener('DOMContentLoaded', function () {

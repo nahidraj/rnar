@@ -3,6 +3,7 @@
 
 .banner_area {
   min-height: calc(100vh - 126px);
+  height: 100%;
   // background-color: $black;
   position: relative;
   display: flex;
@@ -31,10 +32,18 @@
       background-color: $white;
       padding: 24px;
       width: 90%;
+      max-height: 200px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
       margin: 0 auto;
       visibility: hidden;
       opacity: 0;
-      .common_btn{
+
+      .common_btn {
         margin-top: 30px;
       }
     }
@@ -63,7 +72,8 @@
 
     &:hover {
       flex-grow: 7;
-      .text{
+
+      .text {
         visibility: visible;
         opacity: 1;
         transition: $transition;

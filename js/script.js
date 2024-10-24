@@ -1,4 +1,4 @@
-$(function () {
+(function ($) {
   "use strict";
 
   // Fixed menu js start
@@ -22,25 +22,15 @@ $(function () {
       sessionStorage.setItem('modalShown', 'true');
     }
   });
+
   // gallery js
   const items = document.querySelectorAll('.main .video_item');
-
   items.forEach((item, index) => {
     if ((index + 1) % 6 === 5) {
       item.classList.add('moved-up');
     }
   });
 
-  // rotate start gsap js
-  gsap.from(".star img", {
-    rotate: "360",
-    scrollTrigger: {
-      trigger: ".our_projects",
-      scroller: "body",
-      start: "top 50%",
-      scrub: 0.5,
-    },
-  });
 
   // testimonial slider js
   $(".team_slider").slick({
@@ -84,30 +74,131 @@ $(function () {
     $('.blog_slider').slick('slickNext');
   });
 
-  // gsap splitting text
-  gsap.registerPlugin(ScrollTrigger);
-  const splitTypes = document.querySelectorAll(".reveal-type");
+  // Split text animation
+  document.addEventListener("DOMContentLoaded", function () {
+    if ($(".split-text").length > 0) {
+      // Initialize SplitText animations
+      initSplitTextAnimations();
+  
+      // Initialize Isotope
+      const $projectsContainer = $('.projects_container').isotope({
+        itemSelector: '.col-lg-6',
+        layoutMode: 'fitRows'
+      });
+  
+      // Filter projects when a button is clicked
+      $('.projects_menus button').on('click', function () {
+        const filterValue = $(this).attr('data-filter');
+        $projectsContainer.isotope({ filter: filterValue });
+  
+        // Re-initialize the SplitText animations after Isotope filter, excluding the title
+        $projectsContainer.one('arrangeComplete', function () {
+          initSplitTextAnimations();
+        });
+      });
+    }
+  
+    // Function to initialize SplitText animations
+    function initSplitTextAnimations() {
+      $(".split-text").each(function (index, el) {
+        // If the element is the project section title and has already run, skip re-initialization
+        if ($(el).hasClass('project-section-title') && el.hasRun) {
+          return; // Skip this element
+        }
+  
+        // Reset previous SplitText instance if it exists
+        if (el.split) el.split.revert();
+  
+        // Create a new SplitText instance
+        el.split = new SplitText(el, {
+          type: "lines,words,chars",
+          linesClass: "tp-split-line"
+        });
+  
+        gsap.set(el, {
+          perspective: 400
+        });
+  
+        // Apply initial animation settings based on the class
+        const animationProps = {
+          opacity: 0,
+          ease: "circ.out"
+        };
+  
+        if ($(el).hasClass('right')) {
+          animationProps.x = "50";
+        } else if ($(el).hasClass('left')) {
+          animationProps.x = "-50";
+        } else if ($(el).hasClass('up')) {
+          animationProps.y = "80";
+        } else if ($(el).hasClass('down')) {
+          animationProps.y = "-80";
+        }
+  
+        gsap.set(el.split.chars, animationProps);
+  
+        // Use ScrollTrigger for animation
+        el.anim = gsap.to(el.split.chars, {
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+            onEnter: () => {
+              // Mark the project section title as having run
+              if ($(el).hasClass('project-section-title')) {
+                el.hasRun = true; // Set a custom property to indicate it has run
+              }
+            }
+          },
+          x: "0",
+          y: "0",
+          rotateX: "0",
+          scale: 1,
+          opacity: 1,
+          duration: 0.4,
+          stagger: 0.02,
+        });
+      });
+    }
+  });
+  
+  // Image reveal js
+  document.addEventListener('DOMContentLoaded', function () {
+    let revealContainers = document.querySelectorAll(".reveal_image");
+    revealContainers.forEach((container) => {
+      let image = container.querySelector("img");
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          toggleActions: "play none none reverse",
+        }
+      });
 
-  splitTypes.forEach((char, i) => {
-    const text = new SplitType(char, {
-      types: "chars,words",
-    });
+      tl.set(container, {
+        autoAlpha: 1
+      });
 
-    gsap.from(text.chars, {
-      scrollTrigger: {
-        trigger: char,
-        start: "top 100%",
-        scrub: false,
-        markers: false,
-        toggleActions: "restart none none reset",
-      },
-      x: 80,
-      opacity: 0,
-      stagger: 0.02,
+      if (container.classList.contains('zoom-out')) {
+        // Zoom-out effect
+        tl.from(image, 1.5, {
+          scale: 1.4,
+          ease: Power2.out
+        });
+      } else if (container.classList.contains('left') || container.classList.contains('right')) {
+        let xPercent = container.classList.contains('left') ? -100 : 100;
+        tl.from(container, 1.5, {
+          xPercent,
+          ease: Power2.out
+        });
+        tl.from(image, 1.5, {
+          xPercent: -xPercent,
+          scale: 1,
+          delay: -1.5,
+          ease: Power2.out
+        });
+      }
     });
   });
-
-
 
   // magnific popup js
   $(".parent-container").magnificPopup({
@@ -145,37 +236,6 @@ $(function () {
       $(this).html(countNumber);
     });
   });
-
-
-  // image reveal
-  gsap.registerPlugin(ScrollTrigger);
-
-  let revealContainers = document.querySelectorAll(".reveal_image");
-
-  revealContainers.forEach((container) => {
-    let image = container.querySelector("img");
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container,
-        toggleActions: "restart none none reset",
-      },
-    });
-
-    tl.set(container, {
-      autoAlpha: 1,
-    });
-    tl.from(container, 1.5, {
-      xPercent: -100,
-      ease: Power2.out,
-    });
-    tl.from(image, 1.5, {
-      xPercent: 100,
-      scale: 1.3,
-      delay: -1.5,
-      ease: Power2.out,
-    });
-  });
-
 
   // back to top js
   var btn = $(".scroll-to-top");
@@ -217,4 +277,4 @@ $(function () {
     $(this).parent(".sub-mobile-menu").children("ul").slideToggle("100");
     $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
   });
-});
+})(jQuery);
